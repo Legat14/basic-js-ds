@@ -22,7 +22,7 @@ class BinarySearchTree {
   }
 
   add(data) {
-    
+
     let currentNode = this.treeRoot;
 
     if (this.treeRoot === null) {
@@ -112,11 +112,33 @@ class BinarySearchTree {
   }
 
   min() {
-    return this;
+    if (this.treeRoot === null) {
+      return null;
+    } else {
+      let currentNode = this.treeRoot;
+      while (true) {
+        if (currentNode.left === null) {
+          return currentNode.value;
+        } else {
+          currentNode = currentNode.left;
+        }
+      }
+    }
   }
 
   max() {
-    return this;
+    if (this.treeRoot === null) {
+      return null;
+    } else {
+      let currentNode = this.treeRoot;
+      while (true) {
+        if (currentNode.right === null) {
+          return currentNode.value;
+        } else {
+          currentNode = currentNode.right;
+        }
+      }
+    }
   }
 }
 
